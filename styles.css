@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex; /* For sidebar layout */
+    background-color: #f4f4f4; /* Light background for the rest of the page */
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align navbar items to the right */
+}
+
+nav ul li {
+    margin-right: 20px; /* Space between links */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px; /* Adds padding around the links */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    background-color: #555;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #004d99;
+    color: white;
+    padding: 20px 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50px; /* Below navbar */
+    left: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #003366;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 250px; /* Sidebar width */
+    padding: 20px;
+    width: calc(100% - 250px); /* Adjust content width */
+    margin-top: 60px; /* To avoid navbar overlap */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Adjust sidebar width */
+    }
+
+    .content {
+        margin-left: 200px; /* Adjust content for smaller sidebar */
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        height: auto;
+        position: relative; /* Allow sidebar to scroll */
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav {
+        padding: 10px; /* Adjust navbar for smaller screens */
+    }
+
+    nav ul {
+        justify-content: center; /* Center the navbar items on small screens */
+    }
+
+    nav ul li {
+        margin-right: 15px;
+    }
+}
