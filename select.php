@@ -31,8 +31,6 @@ while ($row = mysqli_fetch_assoc($q)) {
     <td> <?php echo $row["email"] ?></td>
     <td><a href="edit.php?id=<?php echo $row["id"] ?>">edit</a> </td>
     <td><a href="deletesql.php?id=<?php echo $row["id"] ?>">delete</a> </td>
-    <td>  <td> <?php echo $row["email"] ?></td> </td>
-    
   </tr>
   <?php } ?>
 </table>

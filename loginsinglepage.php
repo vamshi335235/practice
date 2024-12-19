@@ -1,19 +1,25 @@
 <?php
 include_once('connection.php');
+session_start();
 if (isset($_POST['submit'])) 
 {
 
-    $email1=$_REQUEST['name'];
-    $pass1=$_REQUEST['rollno'];
-    $sql = "SELECT * FROM hlo WHERE name = ? AND rollnumber = ?";
+    $email1=$_REQUEST['email'];
+    $pass1=$_REQUEST['password'];
+    $sql = "SELECT * FROM register WHERE email = ? AND password = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $email1, $pass1); // "ss" indicates two string parameters
+
+    $_SESSION['email']=$email1;
+    
     $stmt->execute();
     $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
         echo "Login done";
+        header("location:dashboard1.php");
     } else {
+      header("location: loginsinglepage.php?msg=please enter correct credentials");
         echo "Please enter again";
     }
     // Close the statement
@@ -38,13 +44,13 @@ if (isset($_POST['submit']))
 <form action="loginsinglepage.php" method="post">
   <!-- Email input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="form2Example1" class="form-control" name="name" />
+    <input type="text" id="form2Example1" class="form-control" name="email" />
     <label class="form-label" for="form2Example1">Email address</label>
   </div>
 
   <!-- Password input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="text" id="form2Example2" class="form-control"  name="rollno"/>
+    <input type="text" id="form2Example2" class="form-control"  name="password"/>
     <label class="form-label" for="form2Example2">Password</label>
   </div>
 
@@ -60,7 +66,7 @@ if (isset($_POST['submit']))
 
     <div class="col">
       <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
+      <a href="forgot_password.php">Forgot password?</a>
     </div>
   </div>
 <input  type="hidden" name = "submit">
