@@ -58,7 +58,7 @@ if (isset($_POST['submit']))
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                       <input type="text" id="form3Example1c" class="form-control" name="name" required />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
+                      <label class="form-label" for="form3Example1c">rollnum</label>
                     </div>
                   </div>
 

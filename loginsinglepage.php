@@ -67,6 +67,7 @@ if (isset($_POST['submit']))
     <div class="col">
       <!-- Simple link -->
       <a href="forgot_password.php">Forgot password?</a>
+      <a href="password.php">Forgot password?</a>
     </div>
   </div>
 <input  type="hidden" name = "submit">

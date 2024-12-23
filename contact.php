@@ -177,7 +177,11 @@
             <div class="contact-card">
                 <i class="fas fa-envelope"></i>
                 <h3>Email</h3>
+<<<<<<< Updated upstream
                 <p>pooja@gmail.com</p>
+=======
+                <p>kg reddy@gmail.com</p>
+>>>>>>> Stashed changes
             </div>
             <div class="contact-card">
                 <i class="fas fa-map-marker-alt"></i>
